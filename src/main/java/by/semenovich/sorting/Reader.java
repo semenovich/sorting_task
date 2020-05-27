@@ -12,7 +12,7 @@ public class Reader {
     public static String[][] read(Path path) throws IOException {
         try (Stream<String> stream = Files.lines(path)) {
 
-            return stream.map(s -> s.split(TAB_REGEX)).toArray(String[][]::new);
+            return stream.map(s -> s.split(TAB_REGEX, -1)).toArray(String[][]::new);
         }
     }
 
